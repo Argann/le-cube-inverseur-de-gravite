@@ -26,7 +26,7 @@ public class QbeBehaviour : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        Debug.DrawRay(transform.position, groundCheck.position);
+
         if (Input.GetButtonDown("Jump") && grounded)
         {
             jump = true;
