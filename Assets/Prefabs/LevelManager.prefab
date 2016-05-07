@@ -125,7 +125,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: -3, z: 0}
+  m_LocalPosition: {x: 12, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415410}
@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147320}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 3, z: 0}
+  m_LocalPosition: {x: 12, y: 4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 415410}
@@ -189,6 +189,8 @@ MonoBehaviour:
   - {fileID: 183134, guid: cad9e5c9dffb2c24b81550e23a3f7b32, type: 2}
   - {fileID: 110160, guid: e4b96e4d7746a6f4a97f3bde539bfbff, type: 2}
   - {fileID: 132266, guid: eea516b2482699e48bb9792bed61a420, type: 2}
+  - {fileID: 171306, guid: d18071f445f4c8040a5ccafd41674d09, type: 2}
+  - {fileID: 132266, guid: 22c7dcabb7f4b054e939211d4b8fb727, type: 2}
   platformListDown:
   - {fileID: 183134, guid: ebe185752933d9e4c86bccef384ddd1d, type: 2}
   - {fileID: 168996, guid: eb8ecfa898d13ab4da27f39d1c54e248, type: 2}
@@ -197,6 +199,8 @@ MonoBehaviour:
   - {fileID: 161922, guid: 97bfb82a608ee1a439700fc3be94b957, type: 2}
   - {fileID: 126806, guid: a00829ca3c02c0e44b46f0815ef0a76e, type: 2}
   - {fileID: 110160, guid: 2a6ec35d8a8f57349b524555cadf559d, type: 2}
+  - {fileID: 168996, guid: a1f5a0b521fb04d4ca0bf486f9762086, type: 2}
+  - {fileID: 132266, guid: c3062a4177db9e84d8d309a2ede9ec9d, type: 2}
   startingPointUp: {fileID: 147320}
   startingPointDown: {fileID: 189560}
   item: {fileID: 125476, guid: 15ed136e412409f49b3d18031f9709a0, type: 2}

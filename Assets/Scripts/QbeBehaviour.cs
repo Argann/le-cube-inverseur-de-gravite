@@ -105,6 +105,7 @@ public class QbeBehaviour : MonoBehaviour
     public IEnumerator Die()
     {
         this.audioSource.PlayOneShot(this.soundDeath);
+        this.GetComponent<SpriteRenderer>().enabled = false;
         this.gameOverUI.SetActive(true);
         this.GetComponent<TimeScore>().isPlaying = false;
         yield return new WaitForSeconds(3.0f);
