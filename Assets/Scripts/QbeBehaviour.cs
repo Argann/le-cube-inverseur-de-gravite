@@ -81,7 +81,7 @@ public class QbeBehaviour : MonoBehaviour
             this.audioSource.PlayOneShot(this.soundJump);
             jump = true;
         }
-        else if (Input.GetButtonDown("Reverse Gravity") && grounded)
+        if (Input.GetButtonDown("Reverse Gravity") && grounded)
         {
             this.audioSource.PlayOneShot(this.soundGravity);
             gravity_reverse = true;
@@ -95,7 +95,7 @@ public class QbeBehaviour : MonoBehaviour
             rb2d.AddForce(new Vector2(0f, gravity_direction * jumpForce));
             jump = false;
         }
-        if (gravity_reverse)
+        else if (gravity_reverse)
         {
             this.rb2d.gravityScale *= -1;
             sprite.flipY = !sprite.flipY;
