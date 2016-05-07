@@ -11,6 +11,8 @@ public class QbeBehaviour : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     private SpriteRenderer sprite;
+    [Header("Physique")]
+
     //Puissance du saut
     [SerializeField]
     private float jumpForce;
@@ -22,6 +24,9 @@ public class QbeBehaviour : MonoBehaviour
     private int gravity_direction;
     private bool gravity_reverse;
 
+
+    [Header("Audio")]
+
     [SerializeField]
     private AudioClip soundJump;
     [SerializeField]
@@ -30,6 +35,11 @@ public class QbeBehaviour : MonoBehaviour
     private AudioClip soundDeath;
 
     private AudioSource audioSource;
+
+    [Header("UI")]
+
+    [SerializeField]
+    private GameObject gameOverUI;
     
 
     // Use this for initialization
@@ -42,6 +52,7 @@ public class QbeBehaviour : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
+        this.gameOverUI.SetActive(false);
 	}
 
     // Update is called once per frame
@@ -94,7 +105,8 @@ public class QbeBehaviour : MonoBehaviour
     public IEnumerator Die()
     {
         this.audioSource.PlayOneShot(this.soundDeath);
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("MainLevel");
+        this.gameOverUI.SetActive(true);
+        Destroy(this.gameObject);
+        yield return new WaitForSeconds(2.0f);
     }
 }

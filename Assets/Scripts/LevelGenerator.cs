@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class LevelGenerator : MonoBehaviour {
@@ -53,6 +54,11 @@ public class LevelGenerator : MonoBehaviour {
         {
             SpawnUp();
         }
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene("MainLevel");
     }
 
 
