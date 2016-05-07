@@ -18,7 +18,6 @@ public class MenuManager : MonoBehaviour {
 
     public void OnClick_Quitter(string param)
     {
-        print("OnClick_Quitter : quit !");
         Application.Quit();
     }
 
@@ -38,6 +37,9 @@ public class MenuManager : MonoBehaviour {
         blagues.Add("\"Une histoire émouvante, j'en ai les larmes aux yeux.\" ~ Arnold Schwarzenegger");
         blagues.Add("\"Le nouveau Call Of Duty !\" ~ Albert Einstein");
         blagues.Add("Fait par AlphaDreams, BenLatex et Excilyano.");
+        blagues.Add("STACKOVERFLOW EXCEPTION");
+        blagues.Add("HELP !");
+        blagues.Add("\"Ce n'est pas un boeuf à la fraise !\"");
         if (laBlague != null)
         {
             laBlague.text = blagues[Random.Range(0, blagues.Count)].ToString();
