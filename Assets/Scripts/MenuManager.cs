@@ -7,6 +7,9 @@ public class MenuManager : MonoBehaviour {
 
     [SerializeField]
     private Text laBlague;
+    [SerializeField]
+    private Text highscore;
+
 
 	public void OnClick_Jouer(string param)
     {
@@ -38,6 +41,11 @@ public class MenuManager : MonoBehaviour {
         if (laBlague != null)
         {
             laBlague.text = blagues[Random.Range(0, blagues.Count)].ToString();
+        }
+
+        if (highscore != null)
+        {
+            highscore.text = "Highscore : " + PlayerPrefs.GetInt("highscore", 0);
         }
     }
 }

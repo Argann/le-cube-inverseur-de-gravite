@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(TimeScore))]
 public class QbeBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb2d;
@@ -40,7 +42,9 @@ public class QbeBehaviour : MonoBehaviour
 
     [SerializeField]
     private GameObject gameOverUI;
-    
+    [SerializeField]
+    private GameObject highscore_text;
+
 
     // Use this for initialization
     void Start () {
@@ -52,8 +56,10 @@ public class QbeBehaviour : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
+        PlayerPrefs.SetInt("highscore", 0);
         this.gameOverUI.SetActive(false);
-	}
+        highscore_text.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
@@ -105,6 +111,13 @@ public class QbeBehaviour : MonoBehaviour
     public IEnumerator Die()
     {
         this.audioSource.PlayOneShot(this.soundDeath);
+        int highscore = PlayerPrefs.GetInt("highscore", 0);
+        int score = this.GetComponent<TimeScore>().score;
+        if (highscore < score)
+        {
+            PlayerPrefs.SetInt("highscore", score);
+            highscore_text.SetActive(true);
+        }
         this.gameOverUI.SetActive(true);
         this.GetComponent<TimeScore>().isPlaying = false;
         yield return new WaitForSeconds(3.0f);
