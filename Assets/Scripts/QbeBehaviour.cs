@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(AudioSource))]
 public class QbeBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb2d;
@@ -18,6 +19,13 @@ public class QbeBehaviour : MonoBehaviour
     private bool grounded;
     //La gravité est inversée
     private bool gravity_reverse;
+
+    [SerializeField]
+    private AudioClip soundJump;
+    [SerializeField]
+    private AudioClip soundGravity;
+
+    private AudioSource audioSource;
     
 
     // Use this for initialization
@@ -25,7 +33,7 @@ public class QbeBehaviour : MonoBehaviour
         jump = false;
         grounded = false;
         gravity_reverse = false;
-
+        this.audioSource = this.GetComponent<AudioSource>();
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -38,10 +46,12 @@ public class QbeBehaviour : MonoBehaviour
         grounded = Physics2D.Linecast(transform.position, transform.position + Vector3.down * (this.rb2d.gravityScale < 0 ? -1 : 1), 1 << LayerMask.NameToLayer("Ground"));
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            this.audioSource.PlayOneShot(this.soundJump);
             jump = true;
         }
         else if (Input.GetButtonDown("Reverse Gravity") && grounded)
         {
+            this.audioSource.PlayOneShot(this.soundGravity);
             gravity_reverse = true;
         }
     }
