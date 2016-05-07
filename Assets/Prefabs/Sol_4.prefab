@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422206}
   - 212: {fileID: 21227920}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sol (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425350}
   - 212: {fileID: 21269974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,9 +43,9 @@ GameObject:
   - 61: {fileID: 6125128}
   - 50: {fileID: 5036114}
   - 114: {fileID: 11453852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sol_4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458308}
   - 212: {fileID: 21243052}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 474306}
   - 212: {fileID: 21238890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sol (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0

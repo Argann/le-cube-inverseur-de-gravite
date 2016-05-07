@@ -9,6 +9,13 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField]
     private float platformSpeed;
 
+    public float PlatformSpeed
+    {
+        get { return platformSpeed; }
+        set { platformSpeed = value; }
+    }
+
+
     [SerializeField]
     private GameObject startingPointUp;
 
@@ -28,7 +35,6 @@ public class LevelGenerator : MonoBehaviour {
     {
         GameObject platform = Instantiate(this.platformList[Random.Range(0, this.platformList.Length)]);
         platform.transform.position = this.startingPointUp.transform.position;
-        platform.GetComponent<Rigidbody2D>().velocity = Vector2.left * platformSpeed;
         this.lastSpawnIsUp = true;
     }
 
@@ -36,7 +42,6 @@ public class LevelGenerator : MonoBehaviour {
     {
         GameObject platform = Instantiate(this.platformList[Random.Range(0, this.platformList.Length)]);
         platform.transform.position = this.startingPointDown.transform.position;
-        platform.GetComponent<Rigidbody2D>().velocity = Vector2.left * platformSpeed;
         this.lastSpawnIsUp = false;
     }
 
