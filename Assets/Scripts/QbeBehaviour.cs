@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
@@ -24,6 +25,8 @@ public class QbeBehaviour : MonoBehaviour
     private AudioClip soundJump;
     [SerializeField]
     private AudioClip soundGravity;
+    [SerializeField]
+    private AudioClip soundDeath;
 
     private AudioSource audioSource;
     
@@ -69,5 +72,20 @@ public class QbeBehaviour : MonoBehaviour
             sprite.flipY = !sprite.flipY;
             gravity_reverse = false;
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.tag == "GameOver")
+        {
+            StartCoroutine("Die");
+        }
+    }
+
+    public IEnumerator Die()
+    {
+        this.audioSource.PlayOneShot(this.soundDeath);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainLevel");
     }
 }
