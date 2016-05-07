@@ -56,7 +56,6 @@ public class QbeBehaviour : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
-        PlayerPrefs.SetInt("highscore", 0);
         this.gameOverUI.SetActive(false);
         highscore_text.SetActive(false);
     }
