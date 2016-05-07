@@ -87,7 +87,10 @@ public class LevelGenerator : MonoBehaviour {
         SceneManager.LoadScene("MainLevel");
     }
 
-
+    public void OnClick_Retour()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 
 
 

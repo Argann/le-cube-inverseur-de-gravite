@@ -30,7 +30,7 @@ public class MenuManager : MonoBehaviour {
         blagues.Add("MORDU. MORDU. MORDU.");
         blagues.Add("The cube is a lie !");
         blagues.Add("On a eu l'idée avant Mojang.");
-        blagues.Add("\"Excellent 5/7.\" ~ Nous");
+        blagues.Add("\"5/7\" ~ IGN");
         blagues.Add("\"La 4K vieillit à côté de ce jeu.\" ~ Squeezie");
         blagues.Add("\"Une histoire émouvante, j'en ai les larmes aux yeux.\" ~ Arnold Schwarzenegger");
         blagues.Add("\"Le nouveau Call Of Duty !\" ~ Albert Einstein");
