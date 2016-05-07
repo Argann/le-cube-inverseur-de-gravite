@@ -130,7 +130,7 @@ MonoBehaviour:
   - {fileID: 175452, guid: 059e18c900d160841a05e9aab7cb5a58, type: 2}
   - {fileID: 161922, guid: 97bfb82a608ee1a439700fc3be94b957, type: 2}
   - {fileID: 126806, guid: a00829ca3c02c0e44b46f0815ef0a76e, type: 2}
-  platformSpeed: 4
+  platformSpeed: 6
   startingPointUp: {fileID: 147320}
   startingPointDown: {fileID: 189560}
 --- !u!1001 &100100000
