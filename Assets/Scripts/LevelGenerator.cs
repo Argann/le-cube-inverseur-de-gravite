@@ -32,9 +32,10 @@ public class LevelGenerator : MonoBehaviour {
 
     public void Start()
     {
-        this.lastSpawnIsUp = true;
+        this.lastSpawnIsUp = false;
         StartCoroutine("SpawnItem");
         GeneratePlatform();
+        Time.timeScale = 1f;
     }
 
 
@@ -61,23 +62,23 @@ public class LevelGenerator : MonoBehaviour {
     {
         GameObject platform = Instantiate(this.platformListUp[Random.Range(0, this.platformListUp.Length)]);
         platform.transform.position = this.startingPointUp.transform.position;
-        this.lastSpawnIsUp = true;
     }
 
     public void SpawnDown()
     {
         GameObject platform = Instantiate(this.platformListDown[Random.Range(0, this.platformListDown.Length)]);
         platform.transform.position = this.startingPointDown.transform.position;
-        this.lastSpawnIsUp = false;
     }
 
     public void GeneratePlatform()
     {
         if (this.lastSpawnIsUp)
         {
+            this.lastSpawnIsUp = !this.lastSpawnIsUp;
             SpawnDown();
         } else
         {
+            this.lastSpawnIsUp = !this.lastSpawnIsUp;
             SpawnUp();
         }
     }

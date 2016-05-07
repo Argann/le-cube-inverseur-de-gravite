@@ -7,6 +7,8 @@ public class PlatformScript : MonoBehaviour {
 
     public LevelGenerator levelGenerator;
 
+    private bool hasGenerated = false;
+
     void Start()
     {
         Destroy(this.gameObject, this.secondsBeforeDestroy);
@@ -19,8 +21,12 @@ public class PlatformScript : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.tag == "PlatformGenerator")
+        if (col.gameObject.tag == "PlatformGenerator" && !hasGenerated)
+        {
+            hasGenerated = true;
             levelGenerator.GeneratePlatform();
+        }
+            
     }
 
     

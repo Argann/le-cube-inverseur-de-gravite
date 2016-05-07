@@ -118,6 +118,7 @@ public class QbeBehaviour : MonoBehaviour
             PlayerPrefs.SetInt("highscore", score);
             highscore_text.SetActive(true);
         }
+        this.GetComponent<SpriteRenderer>().enabled = false;
         this.gameOverUI.SetActive(true);
         this.GetComponent<TimeScore>().isPlaying = false;
         yield return new WaitForSeconds(3.0f);
