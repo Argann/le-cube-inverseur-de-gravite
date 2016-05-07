@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8501a5187d0e6c49af36c8055cb7f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
+  scrollSpeed: 0.05
   tileSizeZ: 15
 --- !u!1 &718083128
 GameObject:
@@ -665,6 +665,7 @@ GameObject:
   - 224: {fileID: 718083129}
   - 222: {fileID: 718083131}
   - 114: {fileID: 718083130}
+  - 114: {fileID: 718083132}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -686,8 +687,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 0.79700005}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 0, y: -5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &718083130
 MonoBehaviour:
@@ -728,6 +729,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 718083128}
+--- !u!114 &718083132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 718083128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &953335634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8501a5187d0e6c49af36c8055cb7f63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.1
+  scrollSpeed: 0.01
   tileSizeZ: 15
 --- !u!4 &1533849053
 Transform:
