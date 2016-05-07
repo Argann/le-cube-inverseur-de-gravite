@@ -3,7 +3,8 @@ using System.Collections;
 
 public class BackgroundScroller : MonoBehaviour
 {
-    public float scrollSpeed;
+    [SerializeField]
+    private float scrollSlow;
     public float tileSizeZ;
 
     private Vector3 startPosition;
@@ -15,7 +16,10 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
-        transform.position = startPosition + Vector3.left * newPosition;
+        if (scrollSlow != 0)
+        {
+            float newPosition = Mathf.Repeat(Time.time * LevelGenerator.Speed / scrollSlow, tileSizeZ);
+            transform.position = startPosition + Vector3.left * newPosition;
+        }
     }
 }

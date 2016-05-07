@@ -19,6 +19,7 @@ public class QbeBehaviour : MonoBehaviour
     //Il est au sol
     private bool grounded;
     //La gravité est inversée
+    private int gravity_direction;
     private bool gravity_reverse;
 
     [SerializeField]
@@ -35,6 +36,7 @@ public class QbeBehaviour : MonoBehaviour
     void Start () {
         jump = false;
         grounded = false;
+        gravity_direction = 1;
         gravity_reverse = false;
         this.audioSource = this.GetComponent<AudioSource>();
         rb2d = GetComponent<Rigidbody2D>();
@@ -45,8 +47,14 @@ public class QbeBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 end = transform.position + Vector3.down * (this.rb2d.gravityScale < 0 ? -1 : 1);
+        float moitieLargeur = this.bc2d.size.x / 2;
         //On vérifie si le joueur est bien au sol
-        grounded = Physics2D.Linecast(transform.position, transform.position + Vector3.down * (this.rb2d.gravityScale < 0 ? -1 : 1), 1 << LayerMask.NameToLayer("Ground"));
+        bool grounded1 = Physics2D.Linecast(transform.position, end + Vector3.right * moitieLargeur, 1 << LayerMask.NameToLayer("Ground"));
+        Debug.DrawRay(transform.position, end + Vector3.right * moitieLargeur);
+        bool grounded2 = Physics2D.Linecast(transform.position, end + Vector3.left * moitieLargeur, 1 << LayerMask.NameToLayer("Ground"));
+        Debug.DrawRay(transform.position, end + Vector3.left * moitieLargeur);
+        grounded = grounded1 || grounded2;
         if (Input.GetButtonDown("Jump") && grounded)
         {
             this.audioSource.PlayOneShot(this.soundJump);
@@ -63,7 +71,7 @@ public class QbeBehaviour : MonoBehaviour
     {
         if (jump)
         {
-            rb2d.AddForce(new Vector2(0f, jumpForce));
+            rb2d.AddForce(new Vector2(0f, gravity_direction * jumpForce));
             jump = false;
         }
         if (gravity_reverse)
@@ -71,6 +79,7 @@ public class QbeBehaviour : MonoBehaviour
             this.rb2d.gravityScale *= -1;
             sprite.flipY = !sprite.flipY;
             gravity_reverse = false;
+            gravity_direction *= -1;
         }
     }
 
