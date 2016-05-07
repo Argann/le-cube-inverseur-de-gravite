@@ -9,18 +9,20 @@ public class LevelGenerator : MonoBehaviour {
 
     public static float Speed = 1;
 
-    //public static float Speed
-    //{
-    //    get { return speed; }
-    //    set { speed = value; }
-    //}
-
-
     [SerializeField]
     private GameObject startingPointUp;
 
     [SerializeField]
     private GameObject startingPointDown;
+
+    [SerializeField]
+    private GameObject item;
+
+    [SerializeField]
+    private GameObject startingItemUp;
+
+    [SerializeField]
+    private GameObject startingItemDown;
 
     private bool lastSpawnIsUp;
 
@@ -28,7 +30,28 @@ public class LevelGenerator : MonoBehaviour {
     public void Start()
     {
         this.lastSpawnIsUp = true;
+        StartCoroutine("SpawnItem");
         GeneratePlatform();
+    }
+
+
+    public IEnumerator SpawnItem()
+    {
+        while (true)
+        {
+            if (Random.Range(0f, 1f) <= 0.5f)
+            {
+                GameObject item = Instantiate(this.item);
+                item.transform.position = this.startingItemUp.transform.position;
+            }
+            else
+            {
+                GameObject item = Instantiate(this.item);
+                item.transform.position = this.startingItemDown.transform.position;
+            }
+            yield return new WaitForSeconds(Random.Range(1f, 1.5f));
+        }
+        
     }
 
     public void SpawnUp()

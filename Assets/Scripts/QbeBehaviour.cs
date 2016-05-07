@@ -106,7 +106,8 @@ public class QbeBehaviour : MonoBehaviour
     {
         this.audioSource.PlayOneShot(this.soundDeath);
         this.gameOverUI.SetActive(true);
+        this.GetComponent<TimeScore>().isPlaying = false;
+        yield return new WaitForSeconds(3.0f);
         Destroy(this.gameObject);
-        yield return new WaitForSeconds(2.0f);
     }
 }
