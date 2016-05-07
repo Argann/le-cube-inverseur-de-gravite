@@ -531,6 +531,10 @@ Transform:
   - {fileID: 2005547248}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!4 &777913237 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 477858, guid: 27a78c4b80374704b8236d381b99b485, type: 2}
+  m_PrefabInternal: {fileID: 835467973}
 --- !u!1001 &835467973
 Prefab:
   m_ObjectHideFlags: 0
@@ -573,6 +577,10 @@ Prefab:
     - target: {fileID: 115776, guid: 27a78c4b80374704b8236d381b99b485, type: 2}
       propertyPath: m_Name
       value: 1 - Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419724, guid: 27a78c4b80374704b8236d381b99b485, type: 2}
+      propertyPath: scrollSlow
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27a78c4b80374704b8236d381b99b485, type: 2}
@@ -649,7 +657,7 @@ Prefab:
     - target: {fileID: 11407784, guid: 06aba004ba35e1045a38a11e7ce19dc3, type: 2}
       propertyPath: people_flying_transform
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 777913237}
     m_RemovedComponents:
     - {fileID: 11410798, guid: 06aba004ba35e1045a38a11e7ce19dc3, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 06aba004ba35e1045a38a11e7ce19dc3, type: 2}
