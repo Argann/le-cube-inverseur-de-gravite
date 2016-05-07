@@ -35,6 +35,7 @@ public class LevelGenerator : MonoBehaviour {
         this.lastSpawnIsUp = false;
         StartCoroutine("SpawnItem");
         GeneratePlatform();
+        Time.timeScale = 1f;
     }
 
 
