@@ -5,7 +5,10 @@ using System.Collections;
 public class LevelGenerator : MonoBehaviour {
 
     [SerializeField]
-    private GameObject[] platformList;
+    private GameObject[] platformListUp;
+
+    [SerializeField]
+    private GameObject[] platformListDown;
 
     public static float Speed = 1;
 
@@ -56,14 +59,14 @@ public class LevelGenerator : MonoBehaviour {
 
     public void SpawnUp()
     {
-        GameObject platform = Instantiate(this.platformList[Random.Range(0, this.platformList.Length)]);
+        GameObject platform = Instantiate(this.platformListUp[Random.Range(0, this.platformListUp.Length)]);
         platform.transform.position = this.startingPointUp.transform.position;
         this.lastSpawnIsUp = true;
     }
 
     public void SpawnDown()
     {
-        GameObject platform = Instantiate(this.platformList[Random.Range(0, this.platformList.Length)]);
+        GameObject platform = Instantiate(this.platformListDown[Random.Range(0, this.platformListDown.Length)]);
         platform.transform.position = this.startingPointDown.transform.position;
         this.lastSpawnIsUp = false;
     }

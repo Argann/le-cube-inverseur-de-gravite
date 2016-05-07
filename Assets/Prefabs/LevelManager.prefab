@@ -181,12 +181,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c6b96ff5c17b54abe35cdc2a3e37bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformList:
-  - {fileID: 110160, guid: 2a6ec35d8a8f57349b524555cadf559d, type: 2}
+  platformListUp:
+  - {fileID: 161922, guid: 0be4896a863727a49b3cf9057e264ee9, type: 2}
+  - {fileID: 168996, guid: 1e4de1e6e83634949bc700282700ff80, type: 2}
+  - {fileID: 175452, guid: 3a0878ca25d8106438343b0ad56fc466, type: 2}
+  - {fileID: 126806, guid: 44c9ea01fc3ee2e438b6025788c370cd, type: 2}
+  - {fileID: 183134, guid: cad9e5c9dffb2c24b81550e23a3f7b32, type: 2}
+  - {fileID: 110160, guid: e4b96e4d7746a6f4a97f3bde539bfbff, type: 2}
+  - {fileID: 132266, guid: eea516b2482699e48bb9792bed61a420, type: 2}
+  platformListDown:
+  - {fileID: 183134, guid: ebe185752933d9e4c86bccef384ddd1d, type: 2}
+  - {fileID: 168996, guid: eb8ecfa898d13ab4da27f39d1c54e248, type: 2}
   - {fileID: 175452, guid: 059e18c900d160841a05e9aab7cb5a58, type: 2}
+  - {fileID: 132266, guid: 3d65d8f9b6456634b97a600389706964, type: 2}
   - {fileID: 161922, guid: 97bfb82a608ee1a439700fc3be94b957, type: 2}
   - {fileID: 126806, guid: a00829ca3c02c0e44b46f0815ef0a76e, type: 2}
-  platformSpeed: 6
+  - {fileID: 110160, guid: 2a6ec35d8a8f57349b524555cadf559d, type: 2}
   startingPointUp: {fileID: 147320}
   startingPointDown: {fileID: 189560}
   item: {fileID: 125476, guid: 15ed136e412409f49b3d18031f9709a0, type: 2}
