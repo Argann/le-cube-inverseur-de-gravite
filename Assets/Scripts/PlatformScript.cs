@@ -19,7 +19,8 @@ public class PlatformScript : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D col)
     {
-        levelGenerator.GeneratePlatform();
+        if (col.gameObject.tag == "PlatformGenerator")
+            levelGenerator.GeneratePlatform();
     }
 
     
