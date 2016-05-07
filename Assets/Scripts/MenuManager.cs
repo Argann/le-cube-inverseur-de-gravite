@@ -34,6 +34,7 @@ public class MenuManager : MonoBehaviour {
         blagues.Add("\"La 4K vieillit à côté de ce jeu.\" ~ Squeezie");
         blagues.Add("\"Une histoire émouvante, j'en ai les larmes aux yeux.\" ~ Arnold Schwarzenegger");
         blagues.Add("\"Le nouveau Call Of Duty !\" ~ Albert Einstein");
+        blagues.Add("Fait par AlphaDreams, BenLatex et Excilyano.");
         if (laBlague != null)
         {
             laBlague.text = blagues[Random.Range(0, blagues.Count)].ToString();
