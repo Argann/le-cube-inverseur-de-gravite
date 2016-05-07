@@ -7,15 +7,7 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField]
     private GameObject[] platformList;
 
-    [SerializeField]
-    private float platformSpeed;
-
-    public float PlatformSpeed
-    {
-        get { return platformSpeed; }
-        set { platformSpeed = value; }
-    }
-
+    public static float Speed = 1;
 
     [SerializeField]
     private GameObject startingPointUp;

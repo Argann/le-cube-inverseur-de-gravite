@@ -14,7 +14,7 @@ public class PlatformScript : MonoBehaviour {
 
     void Update()
     {
-        this.transform.position += Vector3.left * Time.deltaTime * levelGenerator.PlatformSpeed;
+        this.transform.position += Vector3.left * Time.deltaTime * LevelGenerator.Speed * 6;
     }
 
     void OnTriggerExit2D(Collider2D col)

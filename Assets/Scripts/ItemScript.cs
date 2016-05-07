@@ -14,6 +14,6 @@ public class ItemScript : MonoBehaviour {
 
     void Update()
     {
-        this.transform.position += Vector3.left * Time.deltaTime * levelGenerator.PlatformSpeed;
+        this.transform.position += Vector3.left * Time.deltaTime * LevelGenerator.Speed*6;
     }
 }

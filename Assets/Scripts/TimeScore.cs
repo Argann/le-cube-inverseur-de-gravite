@@ -40,7 +40,6 @@ public class TimeScore : MonoBehaviour {
         
         if (col.gameObject.tag == "ScoreItem")
         {
-            Debug.Log("LELEOLE");
             this.score += this.scoreItem;
             GetComponent<AudioSource>().PlayOneShot(this.soundItem);
             Destroy(col.gameObject);

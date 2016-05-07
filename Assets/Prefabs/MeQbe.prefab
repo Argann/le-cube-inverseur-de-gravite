@@ -15,6 +15,7 @@ GameObject:
   - 95: {fileID: 9566938}
   - 82: {fileID: 8209434}
   - 114: {fileID: 11410798}
+  - 114: {fileID: 11410576}
   m_Layer: 0
   m_Name: MeQbe
   m_TagString: Player
@@ -172,6 +173,25 @@ MonoBehaviour:
   soundGravity: {fileID: 8300000, guid: 6b0ae46e6e2c7a14cb7517a41f70e074, type: 3}
   soundDeath: {fileID: 8300000, guid: 04c2b62f8e13cf247ada593fab1db9e0, type: 3}
   gameOverUI: {fileID: 0}
+--- !u!114 &11410576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 125792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85917c2b7c41b34188a15e217e9b30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textList:
+  - {fileID: 0}
+  - {fileID: 0}
+  score: 0
+  scoreItem: 1000
+  scoreMultiplicator: 99
+  soundItem: {fileID: 8300000, guid: a0f284874e70fa44bbd0fb051eb16814, type: 3}
+  isPlaying: 0
 --- !u!114 &11410798
 MonoBehaviour:
   m_ObjectHideFlags: 1
