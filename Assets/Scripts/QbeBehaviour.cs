@@ -13,6 +13,7 @@ public class QbeBehaviour : MonoBehaviour
     private Rigidbody2D rb2d;
     private BoxCollider2D bc2d;
     private SpriteRenderer sprite;
+
     [Header("Physique")]
 
     //Puissance du saut
@@ -25,7 +26,6 @@ public class QbeBehaviour : MonoBehaviour
     //La gravité est inversée
     private int gravity_direction;
     private bool gravity_reverse;
-
 
     [Header("Audio")]
 
@@ -44,6 +44,11 @@ public class QbeBehaviour : MonoBehaviour
     private GameObject gameOverUI;
     [SerializeField]
     private GameObject highscore_text;
+
+    [Header("Background")]
+
+    [SerializeField]
+    private Transform people_flying_transform;
 
 
     // Use this for initialization
@@ -97,6 +102,14 @@ public class QbeBehaviour : MonoBehaviour
             gravity_reverse = false;
             gravity_direction *= -1;
         }
+        if (gravity_direction < 0)
+        {
+            people_flying_transform.position += Vector3.up * Time.deltaTime;
+        }
+        else if (people_flying_transform.position.y > 2)
+        {
+            people_flying_transform.position += Vector3.down * Time.deltaTime * 2;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -120,7 +133,7 @@ public class QbeBehaviour : MonoBehaviour
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.gameOverUI.SetActive(true);
         this.GetComponent<TimeScore>().isPlaying = false;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(10.0f);
         Destroy(this.gameObject);
     }
 }
