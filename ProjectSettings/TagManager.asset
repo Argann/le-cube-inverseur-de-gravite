@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - GameOver
   - PlatformGenerator
+  - ScoreItem
   layers:
   - Default
   - TransparentFX

@@ -37,8 +37,10 @@ public class TimeScore : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        
         if (col.gameObject.tag == "ScoreItem")
         {
+            Debug.Log("LELEOLE");
             this.score += this.scoreItem;
             GetComponent<AudioSource>().PlayOneShot(this.soundItem);
             Destroy(col.gameObject);

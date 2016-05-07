@@ -187,9 +187,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   score: 0
-  scoreItem: 0
+  scoreItem: 1000
   scoreMultiplicator: 99
   soundItem: {fileID: 8300000, guid: a0f284874e70fa44bbd0fb051eb16814, type: 3}
+  isPlaying: 0
 --- !u!212 &21244376
 SpriteRenderer:
   m_ObjectHideFlags: 1

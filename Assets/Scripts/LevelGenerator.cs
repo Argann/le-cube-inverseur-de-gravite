@@ -38,6 +38,7 @@ public class LevelGenerator : MonoBehaviour {
     public void Start()
     {
         this.lastSpawnIsUp = true;
+        StartCoroutine("SpawnItem");
         GeneratePlatform();
     }
 
@@ -56,7 +57,7 @@ public class LevelGenerator : MonoBehaviour {
                 GameObject item = Instantiate(this.item);
                 item.transform.position = this.startingItemDown.transform.position;
             }
-            yield return new WaitForSeconds(Random.Range(2f, 10f));
+            yield return new WaitForSeconds(Random.Range(1f, 1.5f));
         }
         
     }
