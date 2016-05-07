@@ -23,6 +23,15 @@ public class LevelGenerator : MonoBehaviour {
     [SerializeField]
     private GameObject startingPointDown;
 
+    [SerializeField]
+    private GameObject item;
+
+    [SerializeField]
+    private GameObject startingItemUp;
+
+    [SerializeField]
+    private GameObject startingItemDown;
+
     private bool lastSpawnIsUp;
 
 
@@ -30,6 +39,26 @@ public class LevelGenerator : MonoBehaviour {
     {
         this.lastSpawnIsUp = true;
         GeneratePlatform();
+    }
+
+
+    public IEnumerator SpawnItem()
+    {
+        while (true)
+        {
+            if (Random.Range(0f, 1f) <= 0.5f)
+            {
+                GameObject item = Instantiate(this.item);
+                item.transform.position = this.startingItemUp.transform.position;
+            }
+            else
+            {
+                GameObject item = Instantiate(this.item);
+                item.transform.position = this.startingItemDown.transform.position;
+            }
+            yield return new WaitForSeconds(Random.Range(2f, 10f));
+        }
+        
     }
 
     public void SpawnUp()
