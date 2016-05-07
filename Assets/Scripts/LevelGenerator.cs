@@ -21,7 +21,7 @@ public class LevelGenerator : MonoBehaviour {
 
     public void Start()
     {
-        InvokeRepeating("GeneratePlatform", 0f, 1f);
+        InvokeRepeating("GeneratePlatform", 0f, 0.1f);
     }
 
     public void GeneratePlatform()

@@ -16,8 +16,6 @@ public class QbeBehaviour : MonoBehaviour
     private bool jump;
     //Il est au sol
     private bool grounded;
-    //Objet permettant de voir si le joueur est au sol
-    public Transform groundCheck;
     //La gravité est inversée
     private bool gravity_reverse;
     
@@ -31,15 +29,13 @@ public class QbeBehaviour : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         bc2d = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
-
-        groundCheck.position.Set(this.transform.position.x, -0.1f - (this.bc2d.size.y / 2), 0);
 	}
 
     // Update is called once per frame
     void Update()
     {
+        //On vérifie si le joueur est bien au sol
         grounded = Physics2D.Linecast(transform.position, transform.position + Vector3.down * (this.rb2d.gravityScale < 0 ? -1 : 1), 1 << LayerMask.NameToLayer("Ground"));
-        Debug.DrawRay(transform.position, transform.position + Vector3.down);
         if (Input.GetButtonDown("Jump") && grounded)
         {
             jump = true;
@@ -61,7 +57,6 @@ public class QbeBehaviour : MonoBehaviour
         {
             this.rb2d.gravityScale *= -1;
             sprite.flipY = !sprite.flipY;
-            //groundCheck.position.Set(this.transform.position.x, (-0.1f - (this.bc2d.size.y / 2)) * (this.rb2d.gravityScale < 0 ? -1 : 1), 0);
             gravity_reverse = false;
         }
     }
