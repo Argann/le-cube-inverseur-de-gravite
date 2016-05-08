@@ -42,7 +42,10 @@ public class TimeScore : MonoBehaviour {
         {
             Time.timeScale += 0.05f;
             this.score += this.scoreItem;
-            GetComponent<AudioSource>().PlayOneShot(this.soundItem);
+            if (PlayerPrefs.GetInt("sons", 1) == 1)
+            {
+                GetComponent<AudioSource>().PlayOneShot(this.soundItem);
+            }
             Destroy(col.gameObject);
         }
     }

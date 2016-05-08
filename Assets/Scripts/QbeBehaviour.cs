@@ -35,6 +35,8 @@ public class QbeBehaviour : MonoBehaviour
     private AudioClip soundGravity;
     [SerializeField]
     private AudioClip soundDeath;
+    [SerializeField]
+    private AudioSource musique;
 
     private AudioSource audioSource;
 
@@ -52,7 +54,8 @@ public class QbeBehaviour : MonoBehaviour
 
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         jump = false;
         grounded = false;
         gravity_direction = 1;
@@ -63,6 +66,10 @@ public class QbeBehaviour : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         this.gameOverUI.SetActive(false);
         highscore_text.SetActive(false);
+        if (PlayerPrefs.GetInt("musique", 1) == 0)
+        {
+           musique.Stop();
+        }
     }
 
     // Update is called once per frame
@@ -78,12 +85,18 @@ public class QbeBehaviour : MonoBehaviour
         grounded = grounded1 || grounded2;
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            this.audioSource.PlayOneShot(this.soundJump);
+            if (PlayerPrefs.GetInt("sons", 1) == 1)
+            {
+                this.audioSource.PlayOneShot(this.soundJump);
+            }
             jump = true;
         }
         if (Input.GetButtonDown("Reverse Gravity") && grounded)
         {
-            this.audioSource.PlayOneShot(this.soundGravity);
+            if (PlayerPrefs.GetInt("sons", 1) == 1)
+            {
+                this.audioSource.PlayOneShot(this.soundGravity);
+            }
             gravity_reverse = true;
         }
     }
@@ -122,7 +135,10 @@ public class QbeBehaviour : MonoBehaviour
 
     public IEnumerator Die()
     {
-        this.audioSource.PlayOneShot(this.soundDeath);
+        if (PlayerPrefs.GetInt("sons", 1) == 1)
+        {
+            this.audioSource.PlayOneShot(this.soundDeath);
+        }
         int highscore = PlayerPrefs.GetInt("highscore", 0);
         int score = this.GetComponent<TimeScore>().score;
         if (highscore < score)
