@@ -9,20 +9,30 @@ public class MenuManager : MonoBehaviour {
     private Text laBlague;
     [SerializeField]
     private Text highscore;
+    [SerializeField]
+    private AudioSource music;
+    [SerializeField]
+    private GameObject options;
 
 
-	public void OnClick_Jouer(string param)
+	public void OnClick_Jouer()
     {
         SceneManager.LoadScene("MainLevel");
     }
 
-    public void OnClick_Quitter(string param)
+    public void OnClick_Quitter()
     {
         Application.Quit();
     }
 
+    public void OnClick_Options()
+    {
+        options.SetActive(true);
+    }
+
     void Start()
     {
+        options.SetActive(false);
         ArrayList blagues = new ArrayList();
         blagues.Add("Garantie sans écrou !");
         blagues.Add("VOUS AVEZ PERDU !");
@@ -48,6 +58,10 @@ public class MenuManager : MonoBehaviour {
         if (highscore != null)
         {
             highscore.text = "Highscore : " + PlayerPrefs.GetInt("highscore", 0);
+        }
+        if (PlayerPrefs.GetInt("musique", 1) == 0)
+        {
+            music.Stop();
         }
     }
 }
