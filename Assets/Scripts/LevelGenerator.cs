@@ -5,18 +5,9 @@ using System.Collections;
 public class LevelGenerator : MonoBehaviour {
 
     [SerializeField]
-    private GameObject[] platformListUp;
-
-    [SerializeField]
-    private GameObject[] platformListDown;
+    private GameObject[] platformList;
 
     public static float Speed = 1;
-
-    [SerializeField]
-    private GameObject startingPointUp;
-
-    [SerializeField]
-    private GameObject startingPointDown;
 
     [SerializeField]
     private GameObject item;
@@ -58,29 +49,36 @@ public class LevelGenerator : MonoBehaviour {
         
     }
 
-    public void SpawnUp()
-    {
-        GameObject platform = Instantiate(this.platformListUp[Random.Range(0, this.platformListUp.Length)]);
-        platform.transform.position = this.startingPointUp.transform.position;
-    }
+    //public void SpawnUp()
+    //{
+    //    GameObject platform = Instantiate(this.platformListUp[Random.Range(0, this.platformListUp.Length)]);
+    //    platform.transform.position = this.startingPointUp.transform.position;
+    //}
 
-    public void SpawnDown()
-    {
-        GameObject platform = Instantiate(this.platformListDown[Random.Range(0, this.platformListDown.Length)]);
-        platform.transform.position = this.startingPointDown.transform.position;
-    }
+    //public void SpawnDown()
+    //{
+    //    GameObject platform = Instantiate(this.platformListDown[Random.Range(0, this.platformListDown.Length)]);
+    //    platform.transform.position = this.startingPointDown.transform.position;
+    //}
+
+    //public void GeneratePlatform()
+    //{
+    //    if (this.lastSpawnIsUp)
+    //    {
+    //        this.lastSpawnIsUp = !this.lastSpawnIsUp;
+    //        SpawnDown();
+    //    } else
+    //    {
+    //        this.lastSpawnIsUp = !this.lastSpawnIsUp;
+    //        SpawnUp();
+    //    }
+
+    //}
 
     public void GeneratePlatform()
     {
-        if (this.lastSpawnIsUp)
-        {
-            this.lastSpawnIsUp = !this.lastSpawnIsUp;
-            SpawnDown();
-        } else
-        {
-            this.lastSpawnIsUp = !this.lastSpawnIsUp;
-            SpawnUp();
-        }
+        GameObject nextPlatform = Instantiate(this.platformList[Random.Range(0, this.platformList.Length)]);
+        nextPlatform.transform.position = (Vector2)this.transform.position + new Vector2(nextPlatform.GetComponent<BoxCollider2D>().size.x / 2, 0);
     }
 
     public void RestartLevel()
@@ -93,6 +91,11 @@ public class LevelGenerator : MonoBehaviour {
         SceneManager.LoadScene("Menu");
     }
 
-
-
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Platform")
+        {
+            this.GeneratePlatform();
+        }
+    }
 }
