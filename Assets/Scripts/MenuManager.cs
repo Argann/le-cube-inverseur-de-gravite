@@ -13,9 +13,11 @@ public class MenuManager : MonoBehaviour {
     private AudioSource music;
     [SerializeField]
     private GameObject options;
+    [SerializeField]
+    private GameObject histoire;
 
 
-	public void OnClick_Jouer()
+    public void OnClick_Jouer()
     {
         SceneManager.LoadScene("MainLevel");
     }
@@ -30,9 +32,15 @@ public class MenuManager : MonoBehaviour {
         options.SetActive(true);
     }
 
+    public void OnClick_Histoire()
+    {
+        histoire.SetActive(true);
+    }
+
     void Start()
     {
         options.SetActive(false);
+        histoire.SetActive(false);
         ArrayList blagues = new ArrayList();
         blagues.Add("Garantie sans écrou !");
         blagues.Add("VOUS AVEZ PERDU !");
