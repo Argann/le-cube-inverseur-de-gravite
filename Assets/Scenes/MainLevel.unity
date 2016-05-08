@@ -215,7 +215,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.size
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 415410, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: m_LocalPosition.x
@@ -252,11 +252,11 @@ Prefab:
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[0]
       value: 
-      objectReference: {fileID: 184450, guid: ae5ddf31ad89e1c4cb799d3ef5c1dd17, type: 2}
+      objectReference: {fileID: 168040, guid: 58834fc6b0f766847bab0cfb745c7c25, type: 2}
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[1]
       value: 
-      objectReference: {fileID: 165280, guid: a9ec7c2f53588bc46bb33a0a8ccf5e16, type: 2}
+      objectReference: {fileID: 142704, guid: aff876ecb52188d47a234b137b166cff, type: 2}
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[3]
       value: 
@@ -272,15 +272,15 @@ Prefab:
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[6]
       value: 
-      objectReference: {fileID: 182128, guid: a07c098f9c5f5f74184ddf45ac985cf6, type: 2}
+      objectReference: {fileID: 165562, guid: ffee2f14aaa23904880b4e368cf23e25, type: 2}
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[7]
       value: 
-      objectReference: {fileID: 165562, guid: ffee2f14aaa23904880b4e368cf23e25, type: 2}
+      objectReference: {fileID: 103824, guid: df9f649d359fcac4c94faa1a3ee339a5, type: 2}
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[8]
       value: 
-      objectReference: {fileID: 103824, guid: df9f649d359fcac4c94faa1a3ee339a5, type: 2}
+      objectReference: {fileID: 182128, guid: a07c098f9c5f5f74184ddf45ac985cf6, type: 2}
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[9]
       value: 
@@ -288,7 +288,7 @@ Prefab:
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[10]
       value: 
-      objectReference: {fileID: 121222, guid: ae5ddf31ad89e1c4cb799d3ef5c1dd17, type: 2}
+      objectReference: {fileID: 184450, guid: ae5ddf31ad89e1c4cb799d3ef5c1dd17, type: 2}
     - target: {fileID: 11439328, guid: ce53405730bd0314f957cbf1156ebeac, type: 2}
       propertyPath: platformList.Array.data[11]
       value: 
